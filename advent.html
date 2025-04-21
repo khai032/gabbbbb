@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Advent Calendar - Surprise for You</title>
+        <link rel="stylesheet" href="style.css">
+      </head>
+      
+  <style>
+    /* General styles */
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #2e7d32;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Confetti Falling Effect */
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      animation: fall 5s infinite;
+    }
+
+    .confetti div {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      animation: confettiFall 3s infinite ease-in;
+    }
+
+    @keyframes fall {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      50% { opacity: 0; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-100vh) rotate(0); }
+      50% { transform: translateY(100vh) rotate(180deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+
+    /* Background and Text */
+    h2 {
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #9ccc65;
+      font-size: 2.5em;
+      color: #388e3c;
+    }
+
+    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .photo { width: 200px; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease-in-out; box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); }
+    .photo:hover { transform: scale(1.1); box-shadow: 0 5px 25px rgba(76, 175, 80, 0.5); }
+
+    .photo-wrapper { opacity: 0; animation: fadeIn 2s ease forwards; }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Button */
+    #greetingBtn {
+      background-color: #66bb6a;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    #greetingBtn:hover {
+      background-color: #4caf50;
+      transform: scale(1.05);
+    }
+
+    /* Greeting Message */
+    #greetingMessage {
+      display: none;
+      background-color: #81c784;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      animation: slideIn 1s ease forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Music Button */
+    #musicBtn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff4081;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    #musicBtn:hover {
+      background-color: #f50057;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Confetti effect -->
+  <div class="confetti">
+    <div style="left: 5%; animation-delay: 0.2s;"></div>
+    <div style="left: 20%; animation-delay: 0.4s;"></div>
+    <div style="left: 35%; animation-delay: 0.6s;"></div>
+    <div style="left: 50%; animation-delay: 0.8s;"></div>
+    <div style="left: 65%; animation-delay: 1s;"></div>
+    <div style="left: 80%; animation-delay: 1.2s;"></div>
+    <div style="left: 95%; animation-delay: 1.4s;"></div>
+  </div>
+
+  <h2>Happy Birthday!!!!!</h2>
+  <div class="gallery">
+    <!-- Add your 15-20 photos here -->
+    <div class="photo-wrapper">
+        <img src="photo1.jpg" alt="photo1" class="photo" />
+      </div>
+      <div class="photo-wrapper">
+        <img src="photo2.jpg" alt="photo2" class="photo" />
+      </div>
+      <div class="photo-wrapper">
+        <img src="photo3.jpg" alt="photo3" class="photo" />
+      </div>
+      <div class="photo-wrapper">
+          <img src="photo4.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo5.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo6.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo7.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo8.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo9.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo10.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo11.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo12.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo13.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo14.jpg" alt="photoX" class="photo" />
+        </div>
+        <div class="photo-wrapper">
+          <img src="photo15.jpg" alt="photoX" class="photo" />
+        </div>
+                           
+  <button id="greetingBtn">See my message</button>
+
+  <div id="greetingMessage">
+    <h2>Happy Birthday, my briii!!!</h2>
+    <p>Gusto ko lang sabihin na i love you so much po, to the point na i’ll do anything just to make you happy.
+        i'm really sorry po kung minsan nagseselos ka, or nasasaktan ka because of the things i do. hindi ko ’yon ginagawa on purpose, never.
+        sana po maenjoy mo yung birthday mo nang todo, at konting bawas na sa pagiging makulit at sa pagpupuyat ha. unhealthy na kasi yun. wish ko is maging happy ka palagi, at maenjoy mo ang buhay nang buong buo. andito lang ako lagi for you cuz you mean the world to me, and i can't wait to spend more time with you cuz marami pa tayong gagawing magagandang memories to gether. and last puuuuuuu i love youuu and  happy birthdayyy!!!!</p>
+  </div>
+
+  <button id="musicBtn" onclick="toggleMusic()">Play Music</button>
+
+  <audio id="backgroundMusic" loop>
+    <source src="background-music.mp3" type="audio/mp3" />
+  </audio>
+
+  <script>
+    const greetingBtn = document.getElementById("greetingBtn");
+    const greetingMessage = document.getElementById("greetingMessage");
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    let musicPlaying = false;
+
+    greetingBtn.addEventListener("click", () => {
+      greetingMessage.style.display = "block"; // Show greeting message
+      greetingBtn.style.display = "none"; // Hide button after message shows
+    });
+
+    function toggleMusic() {
+      if (musicPlaying) {
+        backgroundMusic.pause();
+        musicPlaying = false;
+        document.getElementById("musicBtn").textContent = "Play Music";
+      } else {
+        backgroundMusic.play();
+        musicPlaying = true;
+        document.getElementById("musicBtn").textContent = "Pause Music";
+      }
+    }
+  </script>
+</body>
+</html>
